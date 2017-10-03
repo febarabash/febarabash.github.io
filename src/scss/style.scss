@@ -1,0 +1,286 @@
+// Reseting my css
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+// Common StyleSheet
+
+$bg-color: #112236;
+$ap-color: #fefcf9;
+$err-color: #ef2222;
+*,html,body {
+    box-sizing: border-box;
+}
+.clear:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+body {
+    height: calc(100vh - 150px);
+    width: 100%;
+    font-size: 16px;
+    background: $bg-color;
+}
+#app {
+    width: 500px;
+    min-height: 300px;
+    margin: 100px auto 0;
+    border: 1px solid black;
+    background: $ap-color;
+    font-family: 'Tahoma', sans-serif;
+}
+input {
+    width: 80%;
+    height: 40px;
+    margin: 0 10% 18px; 
+    padding: 0 10px;
+    border: 1px solid $bg-color;
+    font-size: 18px;
+    line-height: inherit;
+    font-family: 'Tahoma', sans-serif;
+    color: #000;
+    &:focus {
+        outline: none;
+    }
+}
+button {
+    height: 36px;
+    padding: 0 10px;
+    font-size: 18px;
+    color: black;
+    background: $ap-color;
+    border: 1px solid $bg-color;
+    text-transform: uppercase;
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        background: $bg-color;
+        color: $ap-color;
+        cursor: pointer;
+    }
+}
+.next {
+    position: absolute;
+    z-index: 10;
+    right: 10%;
+    bottom: 68px;
+}
+.prev {
+    position: absolute;
+    z-index: 10;
+    left: 10%;
+    bottom: 68px;   
+}
+.error {
+    position: absolute;
+    z-index: 10;
+    font-size: 11px;
+    bottom: 113px;
+    left: 10%;
+    font-weight: 700;
+    width: 80%;
+    padding: 0 10px;
+    color: $err-color;
+}
+h1 {
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    margin: 18px 0 36px;
+}
+#step1 {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    
+}
+#step2 {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+#step3 {
+    position: relative;
+    width: 100%;
+    height: 425px;
+    .line {
+        width: 90%;
+        margin: 0 5%;
+        float: left;
+        .checkbox {
+            width: 30%;
+            float: left;
+            margin: 0 0 18px;
+            input {
+                display: block;
+                width: 20px;
+                height: 20px;
+                margin: 10px 0;
+                float: left;
+            }
+            label {
+                float: left;
+                line-height: 40px;
+                font-size: 18px;
+                color: #112236;
+            }
+        }
+        input {
+            display: none;
+            margin: 0;
+            float: right;
+            width: 70%;
+        }
+    }
+}
+#step4 {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    padding: 0 10%;
+    img {
+        display: block;
+        width: 195px;
+        height: 150px;
+        margin: 0 0 10px;
+        outline: 5px solid $ap-color;
+    }
+    .myavatar {
+        border: 5px solid $bg-color;
+    }
+}
+#step5 {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    p {
+        float: left;
+        width: 100%;
+        padding-left: 5%;
+        padding-bottom: 5px;
+        font-size: 15px;
+    }
+    .split {
+        padding-bottom: 100px;
+    }
+    h2 {
+        float: left;
+        padding: 25px 0 5px;
+        padding-left: 5%;
+        padding-bottom: 5px;
+        font-size: 25px;
+    }
+    img {
+        position: absolute;
+        top: 25px;
+        z-index: 100;
+        right: 5%;
+        width: 195px;
+        height: 150px;
+    }
+    .next {
+        bottom: 0;
+    }
+}
+.country-select {
+    position: relative;
+    #country-select-list {
+        display: none;
+        position: absolute;
+        z-index: 100;
+        top: 39px;
+        left: 10%;
+        right: 10%;
+        list-style: none;
+        background: rgb(241, 241, 241);;
+        border-bottom: 1px solid $bg-color;
+        border-left: 1px solid $bg-color;
+        border-right: 1px solid $bg-color;
+        li {
+            width: 100%;
+            height: 40px; 
+            padding: 0 10px;
+            font-size: 18px;
+            line-height: 40px;
+            font-family: 'Tahoma', sans-serif;
+            color: #000;
+            &:hover {
+                background: rgb(222, 217, 217);
+                cursor: pointer;
+            }
+        }
+    }
+}
+.city-select {
+    position: relative;
+    #city-select-list {
+        display: none;
+        position: absolute;
+        z-index: 99;
+        top: 39px;
+        left: 10%;
+        right: 10%;
+        list-style: none;
+        background: rgb(241, 241, 241);;
+        border-bottom: 1px solid $bg-color;
+        border-left: 1px solid $bg-color;
+        border-right: 1px solid $bg-color;
+        li {
+            width: 100%;
+            height: 40px; 
+            padding: 0 10px;
+            font-size: 18px;
+            line-height: 40px;
+            font-family: 'Tahoma', sans-serif;
+            color: #000;
+            &:hover {
+                background: rgb(222, 217, 217);
+                cursor: pointer;
+            }
+        }
+    }
+}
